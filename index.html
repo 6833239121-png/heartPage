@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าเว็บรูปหัวใจ</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #b3e0ff;
+            position: relative;
+        }
+
+        .heart {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(145deg, #ff80bf, #e673a8);
+            transform: rotate(45deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            animation: heartbeat 1s infinite;
+        }
+
+        .heart:before, .heart:after {
+            content: '';
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: inherit;
+        }
+
+        .heart:before {
+            top: -125px;
+            left: 0;
+        }
+
+        .heart:after {
+            top: 0;
+            left: -125px;
+        }
+
+        .heart-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+            font-family: 'Arial', sans-serif;
+            pointer-events: none;
+            animation: textbeat 1s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: rotate(45deg) scale(1);
+            }
+            50% {
+                transform: rotate(45deg) scale(1.1);
+            }
+        }
+
+        @keyframes textbeat {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart"></div>
+    <div class="heart-text">TAWAN</div>
+
+    
+    <audio autoplay loop>
+        <source src="https://www.soundjay.com/heartbeat/sounds/heartbeat-01.mp3" type="audio/mpeg">
+        เบราว์เซอร์ของคุณไม่รองรับเสียง
+    </audio>
+
+</body>
+</html>
